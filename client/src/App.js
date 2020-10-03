@@ -5,6 +5,7 @@ import Catalogo from './components/Catalogo/catalogo.jsx'
 import {useDispatch, useSelector} from 'react-redux'
 import FilterPanel from './components/FilterPanel/filterPanel.jsx';
 import {setConditions,setProducts} from './redux/products'
+import logo from './images/logo.png'
 
 function App() {
 
@@ -53,7 +54,7 @@ function App() {
   return (
     <div className='container card shadow'>
       <div className='search'>
-        <img className='logo' src='https://www.america-retail.com/static//2020/05/Logo-MercadoLibre-Codo-a-Codo-2-1.png' alt='logo'/>
+        <img className='logo' src={logo} alt='logo'/>
         <SearchBar/>
       </div>
       {prods[0] && 
