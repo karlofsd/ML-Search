@@ -18,18 +18,31 @@ function App() {
   const [page,setPage] = useState(1)
   const [paginated,setPaginated] = useState([])
   const [sortStatus,setSortStatus] = useState(null)
-
+  const [cleanFilter,setCleanFilter] = useState(true)
+  
   let limit = 30
 
   useEffect(() => {
-    setProds(products)
+    if(cleanFilter){
+      setProds(products)}
     dispatch(setConditions(products))
     setPage(1)                                                        
   },[products,sortStatus]) 
 
   const handleSort = (e) => {
     console.log('ordenando')
-    dispatch(setProducts(e.target.name, products))
+    if(cleanFilter){
+      dispatch(setProducts(e.target.name, products))
+    }
+    else{
+      let sort;
+      if(e.target.name === 'asc'){
+        sort = prods.sort((a,b) => a.price - b.price)
+      }else {
+        sort = prods.sort((a,b) => b.price - a.price)
+      }
+      setProds(sort)
+    }
     setSortStatus(e.target.name !== 'asc' ? 'asc' : 'desc')
   }
 
@@ -42,8 +55,13 @@ function App() {
 
   const handleFilter = (e) => {
     console.log('filtrando')
-    let filter = products.filter(f => f.condition === e)
-    setProds(filter)
+    if(e === 'clean'){
+      setProds(products)
+      setCleanFilter(true)
+    }else{
+      setProds(e)
+      setCleanFilter(false)
+    }
     setPage(1)
   }
 
@@ -55,12 +73,25 @@ function App() {
     <div className='container card shadow'>
       <div className='search'>
         <img className='logo' src={logo} alt='logo'/>
-        <SearchBar/>
+        <SearchBar clean={setCleanFilter}/>
       </div>
       {prods[0] && 
       <div className='content'>
-        <FilterPanel conditions={conditions} filter={handleFilter} products={prods}/>
-        <Catalogo products={prods} paginator={paginator} page={page} handlePage={handlePage} sort={handleSort} paginated={paginated} sortStatus={sortStatus}/>
+        <FilterPanel 
+          conditions={conditions} 
+          filter={handleFilter} 
+          products={products} 
+          clean={cleanFilter}
+        />
+        <Catalogo 
+          products={prods} 
+          paginator={paginator} 
+          page={page} 
+          handlePage={handlePage} 
+          sort={handleSort} 
+          paginated={paginated} 
+          sortStatus={sortStatus}
+        />
       </div>
       }
     </div>

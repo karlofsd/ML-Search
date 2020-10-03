@@ -3,7 +3,7 @@ import {useDispatch} from 'react-redux'
 import {getProducts} from '../../redux/products'
 import './searchBar.css'
 
-const SearchBar = () => {
+const SearchBar = ({clean}) => {
 
     const dispatch = useDispatch()
     const [input, setInput] = useState("")
@@ -13,14 +13,15 @@ const SearchBar = () => {
     }
 
     const handleSearch = () => {
+        clean(true)
         dispatch(getProducts(input))
         setInput('')
+
     }
 
     const handleChange = (e) => setInput(e.target.value)
 
     return(
-
         <form className='form-group' onSubmit={(e) => handleSubmit(e)}>
             <input 
                 className='form-control'

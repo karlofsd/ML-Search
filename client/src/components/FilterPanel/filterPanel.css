@@ -6,6 +6,13 @@
     padding: 0 10px 0 5px
 }
 
+.label-filter{
+    display: flex;
+    font-size: 1.2em;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .condition{
     color: black;
     display:flex;
@@ -16,4 +23,9 @@
     color: blue;
     font-weight: 600;
     font-size: 1.1em;
+}
+
+.button-x{
+    display: flex;
+    align-items: center;
 }
