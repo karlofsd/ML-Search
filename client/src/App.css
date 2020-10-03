@@ -1,0 +1,39 @@
+body{
+  margin: 0;
+  height: auto;
+  background-color: rgb(34, 33, 33);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70vw;
+  height: 94vh;
+  border-radius: 10px 10px 0 0;
+  margin: 1% auto;
+  padding: 0;
+  background-color: #fed22f;
+}
+
+.search {
+  display: flex;
+  justify-content: space-evenly;
+  height: 20%;
+  width: 100%;
+  align-items: center;
+}
+
+.logo{
+  height: 15vw;
+  overflow: hidden;
+}
+
+.content{
+  display: flex;
+  height: 80%;
+  width: 100%;
+  border-top: 1.5px solid whitesmoke;
+  padding: 5px;
+  background-color: white;
+}

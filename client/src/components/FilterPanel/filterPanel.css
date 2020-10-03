@@ -1,0 +1,19 @@
+.filter{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 100%;
+    padding: 0 10px 0 5px
+}
+
+.condition{
+    color: black;
+    display:flex;
+    justify-content: space-between;
+}
+
+.condition:hover{
+    color: blue;
+    font-weight: 600;
+    font-size: 1.1em;
+}

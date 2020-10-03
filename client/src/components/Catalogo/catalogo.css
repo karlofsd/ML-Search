@@ -1,0 +1,34 @@
+.box-content{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+}
+
+.tabs{
+    display: flex;
+    align-items: flex-end;
+    height: 5%;
+    justify-content: flex-end;
+}
+    .tab{
+        border-radius: 5px 10px 0 0;
+        height: 100%;
+        width: 10%;
+        padding: 2px;
+        font-size: small;
+        font-weight: 400;
+    }
+.cards{
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    height: 90%;
+}
+.ant-pagination{
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}

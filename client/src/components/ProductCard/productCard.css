@@ -1,0 +1,61 @@
+.list{
+    
+    height: 30%;
+    width: 100%;
+    
+}
+
+.list:hover{
+    background: rgb(252, 252, 114);
+}
+
+.link{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+    color:currentColor
+}
+.part1{
+    height: 90%;
+    display: flex;
+    width: 20%;
+    justify-content: center;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 10%;
+}
+
+.item-img{
+    height: 100%;
+}
+
+.part2{
+    width: 80%;
+    height: 100%;
+    padding-left: 10px;
+}
+
+.text-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 10px;
+    height: 90%;
+    align-items: flex-start;
+}
+
+.text-product{
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+    width: 100%;
+}
+
+h4{
+    color:currentColor
+}
