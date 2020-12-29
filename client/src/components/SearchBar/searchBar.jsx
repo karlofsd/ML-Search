@@ -28,7 +28,7 @@ const SearchBar = ({clean}) => {
                 id='search' 
                 name='search' 
                 type="text" 
-                placeholder='Encuentra lo que quieras'
+                placeholder='Encontrá lo que querés...'
                 value={input}
                 onChange={handleChange}
             />
