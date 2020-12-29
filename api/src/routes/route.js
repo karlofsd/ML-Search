@@ -4,7 +4,6 @@ const axios = require('axios')
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const cors = require('cors');
-const redis = require('redis')
 const ExpressRedisCache = require('express-redis-cache')
 const cache = ExpressRedisCache({
     expire:60
